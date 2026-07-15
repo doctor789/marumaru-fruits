@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>まるまるフルーツ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="game-card" aria-label="まるまるフルーツゲーム">
+      <header>
+        <div class="brand"><span class="brand-icon">🍉</span><div><p>FRUIT PUZZLE</p><h1>まるまるフルーツ</h1></div></div>
+        <button id="restart" class="restart" type="button">↻ はじめから</button>
+      </header>
+
+      <div class="game-layout">
+        <aside class="panel left-panel">
+          <p class="label">SCORE</p>
+          <output id="score">0000</output>
+          <div class="tip"><span>💡</span><p>同じフルーツをくっつけると、ひとつ大きくなるよ！</p></div>
+        </aside>
+
+        <div class="board-wrap">
+          <div id="board" class="board" role="application" aria-label="クリックしてフルーツを落とすゲーム画面">
+            <div class="danger-line"></div>
+            <div class="cloud cloud-a"></div><div class="cloud cloud-b"></div>
+            <div id="drop-guide" class="drop-guide"></div>
+            <div id="game-over" class="game-over hidden"><p>GAME OVER</p><strong id="final-score">0</strong><span>POINTS</span><button id="retry" type="button">もう一度あそぶ</button></div>
+          </div>
+          <p class="instruction">タップ / クリックでフルーツを落とそう</p>
+        </div>
+
+        <aside class="panel next-panel">
+          <p class="label">NEXT</p>
+          <div class="next-box"><div id="next-fruit" class="fruit preview"></div></div>
+          <p class="tiny">どこに落とす？</p>
+        </aside>
+      </div>
+    </section>
+    <footer>同じフルーツをつなげて、スイカを目指そう！</footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
